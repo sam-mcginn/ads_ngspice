@@ -8,6 +8,9 @@
 .include ring_oscillator_6.cir
 .include ring_oscillator_7.cir
 
+* set temperature
+.temp 27
+
 .global vdd vss enable
 V0 vdd vss dc 1.2v
 V1 vss 0 0
@@ -24,6 +27,7 @@ xring7 enable out7 ring_oscillator_7
 
 
 * keep enable deasserted for a period of time, them assert
+* pwl( t1 v1  t2 v2  t3 v3)
 Venable enable vss pwl(0 0 9.9n 0 10n 1.2)
 *Vin enable 0 pulse(0 1.2 0 0.1u 0.1u 2u 4u 1)
 
