@@ -1,0 +1,41 @@
+* run_oscillators
+.include ring_oscillator_0.cir
+.include ring_oscillator_1.cir
+.include ring_oscillator_2.cir
+.include ring_oscillator_3.cir
+.include ring_oscillator_4.cir
+.include ring_oscillator_5.cir
+.include ring_oscillator_6.cir
+.include ring_oscillator_7.cir
+
+.global vdd vss enable
+V0 vdd vss dc 1.2v
+V1 vss 0 0
+
+* ring oscillator instances - enable=input, n12=output
+xring0 enable out0 ring_oscillator_0
+xring1 enable out1 ring_oscillator_1
+xring2 enable out2 ring_oscillator_2
+xring3 enable out3 ring_oscillator_3
+xring4 enable out4 ring_oscillator_4
+xring5 enable out5 ring_oscillator_5
+xring6 enable out6 ring_oscillator_6
+xring7 enable out7 ring_oscillator_7
+
+
+* keep enable deasserted for a period of time, them assert
+Venable enable vss pwl(0 0 9.9n 0 10n 1.2)
+*Vin enable 0 pulse(0 1.2 0 0.1u 0.1u 2u 4u 1)
+
+* .tran tstep tstop tstart
+.tran 0.1n 100n 98n
+
+.control
+* run simulation
+run
+
+plot enable out0 out1 out2 out3 out4 out5 out6 out7
+
+.endc
+.end
+

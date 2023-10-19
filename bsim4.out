@@ -1,0 +1,10 @@
+
+Checking parameters for BSIM 4.8 model x1:tp
+Warning: Leff = 4.225e-15 <= 1.0e-9. Recommended Leff >= 1e-8 
+Warning: Leff for CV = 4.225e-15 <= 1.0e-9. Recommended LeffCV >=1e-8 
+Warning: Weff = 4.6225e-14 <= 1.0e-9. Recommended Weff >=1e-7 
+Warning: Weff for CV = 4.6225e-14 <= 1.0e-9. Recommended WeffCV >= 1e-7 
+Warning: Toxe = 3.8025e-18 is less than 1A. Recommended Toxe >= 5A
+Warning: Toxp = 3.8025e-18 is less than 1A. Recommended Toxp >= 5A
+Warning: Toxm = 3.8025e-18 is less than 1A. Recommended Toxm >= 5A
+Warning: (B1 + Weff) may be too small.
