@@ -32,7 +32,7 @@ Venable enable vss pwl(0 0 9.9n 0 10n 1.2)
 *Vin enable 0 pulse(0 1.2 0 0.1u 0.1u 2u 4u 1)
 
 * .tran tstep tstop tstart
-.tran 0.1n 100n 98n
+.tran 0.1n 100n 99n
 
 .control
 * run simulation
